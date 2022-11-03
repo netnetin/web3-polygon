@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { ethers } from "ethers";
 import Head from 'next/head'
-
-import { 
-  Container, Row, Col,
-  Button,
-} from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
+import DisplayNfts from './DisplayNfts'
+import mintNFT from "../lib/mint-nft-721-polygon";
+import env from "../env.json";
 
 export default function WalletCard() {
 	
@@ -13,6 +12,9 @@ export default function WalletCard() {
   const [ balance, setBalance ] = useState('');
   const [ err, setErr ] = useState(false);
   const [ msg, setMsg ] = useState('');
+  const [ contractAddr, setContractAddr ] = useState(env.POLYGON_TESTNET_CONTRACT_ADDRESS);
+  const [ load, setLoad ] = useState(false);
+  const [ mintedNFTHash, setMintedNFTHash ] = useState(null)
 
   useEffect(() => {
     if (window.ethereum) {
@@ -87,6 +89,13 @@ export default function WalletCard() {
     setErr(false);
     setMsg("");
   }
+  const mintThisNFT = async () => {
+    setLoad(true)
+    let mintedNFT = await mintNFT()
+    console.log('Minted = ', mintedNFT);
+    setMintedNFTHash(mintedNFT.hash)
+    setLoad(false)
+  }
 
   return (
 		<div>
@@ -106,14 +115,31 @@ export default function WalletCard() {
                 </Button>
               </div>
             :
-              <div className='text-center'>
-                <Row>
+              <div>
+                <Row className='text-center'>
                   <Col>
                     <p className='py-1 text-success'>Status: connected</p>
                   </Col>
                 </Row>
-                <p>Address: <span className='text-primary'>{ address }</span></p>
-                <p>Balance: <span className='text-primary'>{ balance }</span></p>
+                <div className='text-left'>
+                  <p>Address: <span className='text-primary'>{ address }</span></p>
+                  <p>Balance: <span className='text-primary'>{ balance } MATIC</span></p>
+                  <br/>
+                  <Row className='my-3 align-items-center justify-content-center'>
+                    <Col ><p className='my-0'>Looking for NFTs with contract address: <span className='text-primary'>{contractAddr}</span></p></Col>
+                    <Col md="auto">
+                      <Button
+                        disabled={load}
+                        onClick={ ()=>mintThisNFT() }
+                        className="btn-block customPrimaryBtn my-2"
+                      >
+                        Mint an NFT
+                      </Button>
+                    </Col>
+                  </Row>
+                  {mintedNFTHash && <p>NFT Minted! Check it out at: <a href={`https://mumbai.polygonscan.io/tx/${mintedNFTHash}`} className='text-primary'>{ mintedNFTHash }</a></p>}
+                  <DisplayNfts address={address} contractAddr={contractAddr}/>
+                </div>
               </div>
             }
           </div>

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@alch/alchemy-web3": "^1.4.7",
+    "alchemy-sdk": "^2.2.0",
     "bootstrap": "^5.2.2",
     "ethers": "^5.7.2",
     "next": "13.0.1",
