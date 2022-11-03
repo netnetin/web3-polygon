@@ -1,0 +1,36 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a{
+  color: #3D3635 !important;
+  text-decoration: none !important;
+
+}
+.customPrimaryBtn{
+  background: #CB8D00;
+  border: #CB8D00;
+}
+
+.customNavbar{
+  background:#CB8D00;
+}
+.customNavlink{
+  color:#FFFFFF !important;
+}
+
+.customContainer{
+  padding: 20px 0px 20px 0px;
+}
+.pageTitle {
+  color:#CB8D00;
+  text-align: center;
+}
