@@ -137,7 +137,7 @@ export default function WalletCard() {
                       </Button>
                     </Col>
                   </Row>
-                  {mintedNFTHash && <p>NFT Minted! Check it out at: <a href={`https://mumbai.polygonscan.io/tx/${mintedNFTHash}`} className='text-primary'>{ mintedNFTHash }</a></p>}
+                  {mintedNFTHash && <p>NFT Minted! Check it out at: <a href={`https://mumbai.polygonscan.com/tx/${mintedNFTHash}`} className='text-primary'>{ mintedNFTHash }</a></p>}
                   <DisplayNfts address={address} contractAddr={contractAddr}/>
                 </div>
               </div>
