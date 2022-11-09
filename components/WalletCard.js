@@ -89,9 +89,10 @@ export default function WalletCard() {
     setErr(false);
     setMsg("");
   }
-  const mintThisNFT = async () => {
+  const mintThisNFT = async (destinationAddr) => {
     setLoad(true)
-    let mintedNFT = await mintNFT()
+    console.log("mingint and air-dropping to", destinationAddr);
+    let mintedNFT = await mintNFT(destinationAddr)
     console.log('Minted = ', mintedNFT);
     setMintedNFTHash(mintedNFT.hash)
     setLoad(false)
@@ -130,14 +131,14 @@ export default function WalletCard() {
                     <Col md="auto">
                       <Button
                         disabled={load}
-                        onClick={ ()=>mintThisNFT() }
+                        onClick={ ()=>mintThisNFT(address) }
                         className="btn-block customPrimaryBtn my-2"
                       >
                         Mint an NFT
                       </Button>
                     </Col>
                   </Row>
-                  {mintedNFTHash && <p>NFT Minted! Check it out at: <a href={`https://mumbai.polygonscan.com/tx/${mintedNFTHash}`} className='text-primary'>{ mintedNFTHash }</a></p>}
+                  {mintedNFTHash && <p>NFT Minted! Check it out at: <a href={`https://mumbai.polygonscan.com/tx/${mintedNFTHash}`} target="_blank" className='text-primary'>{ mintedNFTHash }</a></p>}
                   <DisplayNfts address={address} contractAddr={contractAddr}/>
                 </div>
               </div>
