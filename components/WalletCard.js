@@ -4,7 +4,6 @@ import Head from 'next/head'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import DisplayNfts from './DisplayNfts'
 import mintNFT from "../lib/mint-nft-721-polygon";
-import env from "../env.json";
 
 export default function WalletCard() {
 	
@@ -12,7 +11,7 @@ export default function WalletCard() {
   const [ balance, setBalance ] = useState('');
   const [ err, setErr ] = useState(false);
   const [ msg, setMsg ] = useState('');
-  const [ contractAddr, setContractAddr ] = useState(env.POLYGON_TESTNET_CONTRACT_ADDRESS);
+  const [ contractAddr, setContractAddr ] = useState(process.env.POLYGON_TESTNET_CONTRACT_ADDRESS);
   const [ load, setLoad ] = useState(false);
   const [ mintedNFTHash, setMintedNFTHash ] = useState(null)
 
