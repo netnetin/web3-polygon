@@ -19,6 +19,8 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.1",
+    "@openzeppelin/contracts": "^4.8.0",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.1"
   }

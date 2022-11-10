@@ -1,0 +1,10 @@
+{
+	"attributes" : [ 
+		{ "trait_type" : "Outfit", "value" : "Red Hoodie"	},
+		{ "trait_type" : "Hair style", "value" : "Bangs"	},
+		{	"trait_type" : "Hair color", "value" : "Purple" }
+	],
+	"description" : "Avatar",
+	"image" : "https://gateway.pinata.cloud/ipfs/QmQJEaAa5Vppyt8QEBVwJTgD1MaiXCHWUAtZ8eu7vTWSHb",
+	"name" : "PS Avatar"
+}

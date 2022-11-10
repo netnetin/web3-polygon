@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Polygon Testnet Network
 
-## Getting Started
+Environment Variables needed -
 
-First, run the development server:
+ALCHEMY_POLYGON_KEY
+ALCHEMY_POLYGON_MAINNET_URL = 'https://polygon-mainnet.g.alchemy.com/v2/'
+POLYGON_TESTNET_CONTRACT_ADDRESS = '0x6ca02692FD98DB216E9475ECFA2A0b845857a807'
+PRIVATE_KEY = signer's private key
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+In this project - 
+- Connect your wallet with Metamask by clicking on the 'Connect Wallet' button
+- Make sure your chain is set to Polygon Mumbai Testnet
+Once connected you can see your balance and NFTs in your wallet in the dashbord
+- Click on 'Mint an NFT' button to mint a test NFT in your wallet
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+To change contract -
+- To Change contract name, change filename and contract name in file in ./api/contracts/MyNFT721.sol
+- Run ```npx hardhat compile```
+- Update contract name in deploy script - ./lib/deploy-721.js
+- Deploy the new contract by running ```npx hardhat --network mumbai run scripts/deploy.js```
+- Update the contract's ABI file import and the contract address in file mint-nft-721-polygon.js
+- Update NFT data using [Pinata](https://app.pinata.cloud/)
+	- Go to 'Files', click on 'Upload' to upload your image.
+	- Update NFT attributes and image url in file ./lib/nft-metadata.json, and upload it to Pinata
+- You can also create and sign the transcation - add the signing code block from [here](https://ethereum.org/ca/developers/tutorials/how-to-mint-an-nft/#create-txn)
+- Run ```node scripts/mint-nft.js``` to deploy your NFT
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Above steps are from this [tutorial](https://ethereum.org/ca/developers/tutorials/how-to-write-and-deploy-an-nft/)
