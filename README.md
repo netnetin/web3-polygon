@@ -2,10 +2,10 @@ Polygon Testnet Network
 
 Environment Variables needed -
 
-ALCHEMY_POLYGON_KEY
-ALCHEMY_POLYGON_MAINNET_URL = 'https://polygon-mainnet.g.alchemy.com/v2/'
-POLYGON_TESTNET_CONTRACT_ADDRESS = '0x6ca02692FD98DB216E9475ECFA2A0b845857a807'
-PRIVATE_KEY = signer's private key
+- ALCHEMY_POLYGON_KEY
+- ALCHEMY_POLYGON_MAINNET_URL = 'https://polygon-mainnet.g.alchemy.com/v2/'
+- POLYGON_TESTNET_CONTRACT_ADDRESS = '0x6ca02692FD98DB216E9475ECFA2A0b845857a807'
+- PRIVATE_KEY = signer's private key
 
 
 In this project - 
