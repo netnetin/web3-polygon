@@ -1,10 +1,8 @@
 {
 	"attributes" : [ 
-		{ "trait_type" : "Outfit", "value" : "Red Hoodie"	},
-		{ "trait_type" : "Hair style", "value" : "Bangs"	},
-		{	"trait_type" : "Hair color", "value" : "Purple" }
+		{ "trait_type" : "Animal", "value" : "Whale"	}
 	],
-	"description" : "Avatar",
-	"image" : "https://gateway.pinata.cloud/ipfs/QmQJEaAa5Vppyt8QEBVwJTgD1MaiXCHWUAtZ8eu7vTWSHb",
-	"name" : "PS Avatar"
+	"description" : "Blue Whale",
+	"image" : "https://gateway.pinata.cloud/ipfs/QmX6ejDbm3j2oMroNAZLseCGPzrXrsVFwU4SpTgGGi5KaB",
+	"name" : "Blue Whale"
 }

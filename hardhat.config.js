@@ -1,7 +1,7 @@
 /**
 * @type import('hardhat/config').HardhatUserConfig
 */
-require('dotenv').config({path:__dirname+'/.env'});
+require('dotenv').config({path:__dirname+'/.env.local'});
 require("@nomiclabs/hardhat-ethers");
 
 module.exports = {
@@ -9,12 +9,12 @@ module.exports = {
    defaultNetwork: "goerli",
    networks: {
       hardhat: {},
-      // goerli: {
-      //    url: process.env.ALCHEMY_ETH_MAINNET_URL+process.env.ALCHEMY_ETH_KEY,
-      //    accounts: [`0x${process.env.PRIVATE_KEY}`]
-      // },
+      goerli: {
+         url: process.env.ALCHEMY_ETH_GOERLI_URL+process.env.ALCHEMY_ETH_KEY,
+         accounts: [`0x${process.env.PRIVATE_KEY}`]
+      },
       mumbai: {
-        url: process.env.ALCHEMY_POLYGON_MAINNET_URL+process.env.ALCHEMY_POLYGON_KEY,
+        url: process.env.ALCHEMY_POLYGON_MUMBAI_URL+process.env.ALCHEMY_POLYGON_KEY,
         accounts: [`0x${process.env.PRIVATE_KEY}`],
       },
    },
