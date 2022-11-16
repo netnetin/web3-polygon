@@ -34,4 +34,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-env.json
+artifacts/@openzeppelin
+artifacts/build-info

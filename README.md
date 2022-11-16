@@ -15,8 +15,15 @@ Once connected you can see your balance and NFTs in your wallet in the dashbord
 - Click on 'Mint an NFT' button to mint a test NFT in your wallet
 
 
-To change contract -
-- To Change contract name, change filename and contract name in file in ./api/contracts/MyNFT721.sol
+To change NFT Image & Metadata -
+- Login to [Pinata](https://app.pinata.cloud/)
+- Go to 'Files', click on 'Upload' and upload your image.
+- Update NFT attributes and image url in file ./lib/nft-metadata.json, and upload it to Pinata
+- Copy the metadata file CID and update the url for tokenUri in env file
+
+
+To update contract -
+- Update file ./api/contracts/MyNFT721.sol, and rename the filename according to the new contract name
 - Run ```npx hardhat compile```
 - Update contract name in deploy script - ./lib/deploy-721.js
 - Deploy the new contract by running ```npx hardhat --network mumbai run lib/deploy-721.js```

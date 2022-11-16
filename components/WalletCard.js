@@ -90,7 +90,7 @@ export default function WalletCard() {
   }
   const mintThisNFT = async (destinationAddr) => {
     setLoad(true)
-    console.log("mingint and air-dropping to", destinationAddr);
+    console.log("minting and air-dropping to", destinationAddr);
     let mintedNFT = await mintNFT(destinationAddr)
     console.log('Minted = ', mintedNFT);
     setMintedNFTHash(mintedNFT.hash)

@@ -16,6 +16,7 @@ function NftCard ({nft}) {
           <Card.Text className='mb-0'>{ nft.title }</Card.Text>
           <Card.Text className='mb-0'><small>{ nft.description }</small></Card.Text>
           <Card.Text className='mb-0'><small>{ nft.contract.name }</small></Card.Text>
+          <Card.Text className='mb-0'><small>{ nft.tokenId }</small></Card.Text>
         </Card.Body>
     </Card>
   </Col>
